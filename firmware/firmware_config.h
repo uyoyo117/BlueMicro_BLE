@@ -26,20 +26,20 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #define MATRIX_SCAN 1
 #define SEND_KEYS 1
 
-#if KEYBOARD_SIDE == LEFT
+#if KEYBOARD_SIDE == RIGHT
 #define BLE_HID 1
 #define BLE_CENTRAL 1
 #define CENTRAL_COUNT 1
 #define PERIPHERAL_COUNT 1 //1  
 #define BLE_PERIPHERAL 0
-#define DEVICE_NAME DEVICE_NAME_L
-#elif KEYBOARD_SIDE == RIGHT
+#define DEVICE_NAME DEVICE_NAME_R
+#elif KEYBOARD_SIDE == LEFT
 #define BLE_HID 0
 #define BLE_CENTRAL 0
 #define CENTRAL_COUNT 0
 #define PERIPHERAL_COUNT 1 //1  
 #define BLE_PERIPHERAL 1
-#define DEVICE_NAME DEVICE_NAME_R
+#define DEVICE_NAME DEVICE_NAME_L
 #elif KEYBOARD_SIDE == SINGLE
 #define BLE_HID 1
 #define BLE_CENTRAL 0
@@ -63,7 +63,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #endif
 
 #ifndef HIDREPORTINGINTERVAL
-#define HIDREPORTINGINTERVAL 8
+#define HIDREPORTINGINTERVAL 12
 #endif
 
 // Battery Service definitions.
@@ -78,7 +78,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 #define SLEEPING_DELAY 30000              // when it's not connected, 30 seconds is good.
 #define SLEEPING_DELAY_CONNECTED 600000   // 2 minutes is way too fast and really ennoying. making it 10 minutes
-#define SLEEP_ACTIVE 1                    // 1 = it will go to sleep. 0 = sleep will not be activated.
+#define SLEEP_ACTIVE 0                    // 1 = it will go to sleep. 0 = sleep will not be activated.
 
 #ifndef DEFAULT_PWM_MAX_VALUE 
 #define DEFAULT_PWM_MAX_VALUE 0x7FFF      // PWM max intensity

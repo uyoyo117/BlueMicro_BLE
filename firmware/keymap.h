@@ -1,5 +1,5 @@
 /*
-Copyright 2018-2020 <Pierre Constantineau>
+Copyright 2018 <Pierre Constantineau>
 
 3-Clause BSD License
 
@@ -17,23 +17,58 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
+
+#ifndef KEYMAP_H
+#define KEYMAP_H
 #include <stdint.h>
 #include "hid_keycodes.h"
 #include "hardware_variants.h"
 #include "keyboard_config.h"
 #include "advanced_keycodes.h"
-#include "Key.h"
+#include "KeyScanner.h"
 #include <array>
 
-#ifndef KEYMAP_H
-#define KEYMAP_H
+// Layers Definitions
 
-#define _L0  0
-#define _L1  1
-#define _L2  2
-#define _L3  3
+#define _QWERTY 0
+#define _LOWER 1
+#define _RAISE 2
+#define _ADJUST 3
+
+
+// Layers keycodes Definitions
+
+#define L_QWERTY   (LAYER_0 + _QWERTY)
+#define L_LOWER    (LAYER_0 + _LOWER)
+#define L_RAISE    (LAYER_0 + _RAISE)
+#define L_ADJUST   (LAYER_0 + _ADJUST)
+
+
+
+#define _______ KC_TRNS
+#define XXXXXXX KC_NO
+#define KC_CUT  LCTL(KC_X)  // CUT
+#define KC_CPY  LCTL(KC_C)  // COPY
+#define KC_PST  LCTL(KC_V)  // PASTE
+#define KC_UND  LCTL(KC_Z)  // UNDO
+
+// define macro hooks
+
+#define HOME_ADD MC(KC_A)
+#define WORK_ADD MC(KC_B)
+#define EMAIL_1  MC(KC_C)
+#define EMAIL_2  MC(KC_D)
+
+#define USER_MACRO_FUNCTION   0 
+void process_user_macros(uint16_t macroid);
+
+
+#define USER_LAYER_FUNCTION   0 
+void process_user_layers(uint16_t layermask);
 
 void setupKeymap();
 extern std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix;
+extern void addStringToQueue(const char* str);
+extern void addKeycodeToQueue(const uint16_t keycode);
 
 #endif /* KEYMAP_H */
