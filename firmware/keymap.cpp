@@ -66,9 +66,9 @@ void process_user_layers(uint16_t layermask)
  * `------+------+------+------+------+------'
  *               |   [  |   ]  |         
  *               `---------------------------.
- *                             |Lower |Space |
+ *                             |Space |Lower |
  *                             `-------------------------. 
- *                                           | Tab | Home|
+ *                                           |Manu | Home|
  *                                           ------------| 
  *                                           | BSpc|  `  |
  *                                           ------------' 
@@ -81,8 +81,8 @@ std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
         KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
         KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,
                           KC_LBRC, KC_RBRC, 
-                                            L_LOWER, KC_SPC,
-                                            KC_TAB,  KC_HOME,
+                                            KC_SPC, L_LOWER,
+                                            KC_SELECT, KC_HOME,
                                             KC_BSPC, KC_GRAVE
     )};
 
@@ -125,7 +125,7 @@ void setupKeymap() {
  * ,-----------------------------------------.
  * |   ~  |  !   |  @   |  #   |  $   |  %   |
  * |-----------------------------------------|
- * | Mute |      |      |      |      |      |
+ * | Mute |      |      |  UP  |      |      |
  * |------+------+------+------+------+------|
  * | Vol+ |      | LEFT | DOWN | RGHT |      |
  * |------+------+------+------+------+------|
@@ -241,7 +241,7 @@ void process_user_layers(uint16_t layermask)
  *                `-----------------------------------------'
  *                              |   +  |   =  |
  *                ,---------------------------'
- *                | Enter| Raise|
+ *                | Raise|Enter |
  *    ,-------------------------' 
  *    | End | Del | 
  *    |-----------|  
@@ -256,7 +256,7 @@ std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
         KC_H,    KC_J,    KC_K,    KC_L,    KC_SCOLON,KC_QUOTE,
         KC_N,    KC_M,    KC_COMMA,KC_DOT,  KC_SLSH,  KC_BSLS,
                           KC_PLUS ,KC_EQL, 
-        KC_ENT,  L_RAISE,
+        L_RAISE,KC_ENT  ,
         KC_END,  KC_DEL,  
         KC_LGUI, KC_LALT
     )};
