@@ -74,7 +74,7 @@ void process_user_layers(uint16_t layermask)
  *                                           ------------' 
  */
 
-std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
+std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =  
     {KEYMAP(
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5, 
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, 
@@ -82,7 +82,7 @@ std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
         KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,
                           KC_LBRC, KC_RBRC, 
                                             KC_SPC, L_LOWER,
-                                            KC_SELECT, KC_HOME,
+                                            KC_APP, KC_HOME,
                                             KC_BSPC, KC_GRAVE
     )};
 
