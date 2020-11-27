@@ -63,7 +63,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #endif
 
 #ifndef HIDREPORTINGINTERVAL
-#define HIDREPORTINGINTERVAL 8
+#define HIDREPORTINGINTERVAL 12
 #endif
 
 // Battery Service definitions.
@@ -93,15 +93,15 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #endif
 
 #ifndef WS2812B_LED_PIN
-#define WS2812B_LED_PIN 0          
+#define WS2812B_LED_PIN 22          
 #endif
 
 #ifndef WS2812B_LED_COUNT
-#define WS2812B_LED_COUNT 0          
+#define WS2812B_LED_COUNT 48          
 #endif
 
 #ifndef WS2812B_LED_ON
-#define WS2812B_LED_ON 0          
+#define WS2812B_LED_ON 1          
 #endif
 
 #ifndef BACKLIGHT_PWM_ON
@@ -109,7 +109,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #endif
 
 #ifndef BLE_LED_ACTIVE                    // setup default value if not set
-#define BLE_LED_ACTIVE false       
+#define BLE_LED_ACTIVE true       
 #endif 
 
 #ifndef STATUS_BLE_LED_PIN                // setup default value if not set

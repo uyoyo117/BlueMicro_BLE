@@ -22,16 +22,16 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #include "hardware_config.h"
 
 
-#define KEYBOARD_SIDE RIGHT
+#define KEYBOARD_SIDE SINGLE
 // CHANGE THIS FOR THE KEYBOARD TO MATCH WHAT IS BEING FLASHED. OPTIONS: LEFT  RIGHT  SINGLE
 
 #define DEVICE_NAME_R                         "ErgoTravelBLE_R"                          /**< Name of device. Will be included in the advertising data. */
 #define DEVICE_NAME_L                        "ErgoTravelBLE_L"                          /**< Name of device. Will be included in the advertising data. */
-#define DEVICE_NAME_M                         "ErgoTravelBLE"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_M                         "LowPlankBLE"                          /**< Name of device. Will be included in the advertising data. */
 
-#define DEVICE_MODEL                        "ErgoTravelBLE_V1"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_MODEL                        "LowPlankBLE"                          /**< Name of device. Will be included in the advertising data. */
 
-#define MANUFACTURER_NAME                   "JPConstantineau.com"                      /**< Manufacturer. Will be passed to Device Information Service. */
+#define MANUFACTURER_NAME                   "Joni"                      /**< Manufacturer. Will be passed to Device Information Service. */
 
 
 
@@ -50,16 +50,16 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 }
 #else
 #define KEYMAP( \
-      k00, k01, k02, k03, k04, k05, k06, \
-      k10, k11, k12, k13, k14, k15, k16, \
-      k20, k21, k22, k23, k24, k25, k26, \
-      k30, k31, k32, k33, k34, k35,  k36 \
+      k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k010, k011, \
+      k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k110, k111,\
+      k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k210, k211, \
+      k30, k31, k32, k33, k34, k35, k36, k37, k38, k39, k310, k311  \
 ) \
 { \
-    { k00, k01, k02, k03, k04, k05, k06 }, \
-    { k10, k11, k12, k13, k14, k15, k16 }, \
-    { k20, k21, k22, k23, k24, k25, k26 }, \
-    { k30, k31, k32, k33, k34, k35, k36 } \
+      {k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k010, k011}, \
+      {k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k110, k111}, \
+      {k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k210, k211}, \
+      {k30, k31, k32, k33, k34, k35, k36, k37, k38, k39, k310, k311}  \
 } 
 
 #endif
