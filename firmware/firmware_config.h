@@ -78,7 +78,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 #define SLEEPING_DELAY 30000              // when it's not connected, 30 seconds is good.
 #define SLEEPING_DELAY_CONNECTED 600000   // 2 minutes is way too fast and really ennoying. making it 10 minutes
-#define SLEEP_ACTIVE 1                    // 1 = it will go to sleep. 0 = sleep will not be activated.
+#define SLEEP_ACTIVE 0                    // 1 = it will go to sleep. 0 = sleep will not be activated.
 
 #ifndef DEFAULT_PWM_MAX_VALUE 
 #define DEFAULT_PWM_MAX_VALUE 0x7FFF      // PWM max intensity
@@ -93,7 +93,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #endif
 
 #ifndef WS2812B_LED_PIN
-#define WS2812B_LED_PIN 22          
+#define WS2812B_LED_PIN 25          
 #endif
 
 #ifndef WS2812B_LED_COUNT
@@ -109,7 +109,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #endif
 
 #ifndef BLE_LED_ACTIVE                    // setup default value if not set
-#define BLE_LED_ACTIVE true       
+#define BLE_LED_ACTIVE false       
 #endif 
 
 #ifndef STATUS_BLE_LED_PIN                // setup default value if not set

@@ -508,8 +508,8 @@ void sendMouseKey(uint16_t keycode)
     case KC_MS_ACCEL1: movestep = MOVE_STEP; break;
     case KC_MS_ACCEL2: movestep = MOVE_STEP+MOVE_STEP; break;
 
-    case KC_MS_BTN1:  blehid.mouseButtonPress(hid_conn_hdl, MOUSE_BUTTON_LEFT); break;
-    case KC_MS_BTN2:  blehid.mouseButtonPress(hid_conn_hdl, MOUSE_BUTTON_RIGHT); break;
+    case KC_MS_BTN1:  blehid.mouseButtonPress(hid_conn_hdl, MOUSE_BUTTON_LEFT);delay(20); break;
+    case KC_MS_BTN2:  blehid.mouseButtonPress(hid_conn_hdl, MOUSE_BUTTON_RIGHT);delay(20); break;
     case KC_MS_BTN3:  blehid.mouseButtonPress(hid_conn_hdl, MOUSE_BUTTON_MIDDLE); break;
     case KC_MS_BTN4:  blehid.mouseButtonPress(hid_conn_hdl, MOUSE_BUTTON_BACKWARD); break;
     case KC_MS_BTN5:  blehid.mouseButtonPress(hid_conn_hdl, MOUSE_BUTTON_FORWARD); break;

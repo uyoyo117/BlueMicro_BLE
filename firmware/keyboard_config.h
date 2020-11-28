@@ -31,7 +31,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 #define DEVICE_MODEL                        "LowPlankBLE"                          /**< Name of device. Will be included in the advertising data. */
 
-#define MANUFACTURER_NAME                   "Joni"                      /**< Manufacturer. Will be passed to Device Information Service. */
+#define MANUFACTURER_NAME                   "Yonatan keyboard"                      /**< Manufacturer. Will be passed to Device Information Service. */
 
 
 

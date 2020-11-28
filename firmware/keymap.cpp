@@ -16,6 +16,10 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 */
 #include "keymap.h"
+#define KC_PINF PRINT_INFO
+#define KC_PBLE PRINT_BLE
+#define KC_MSRE KC_MS_OFF
+
 
 // Initialize matrix with nothing...
 std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
@@ -42,17 +46,17 @@ void setupKeymap() {
 
 uint32_t layer0_single[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
-        PRINT_BLE,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,  KC_Y, 
-        KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,  KC_H,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  KC_SPC,
-        KC_LCTL, KC_LGUI, KC_LALT, LAYER_3, LAYER_1, KC_SPC,_______
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,     KC_T,   KC_Y,   KC_U,   KC_I,    KC_O,       KC_P, KC_BSPC,
+        KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,     KC_G,   KC_H,   KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,     KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+        LAYER_3, KC_LCTL, KC_LALT, KC_LGUI, LAYER_1,  KC_SPC, KC_SPC, LAYER_2,KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT 
     );
 
 
 
 
 
- /* Layer 1 (Raise) Qwerty Plank
+ /* Layer 1 (lower) Qwerty Plank
  * ,------------------------------------------------.
  * |  `   |   1  |   2  |   3  |   4  |   5  |   -  | 
  * |------+------+------+------+------+-------------|
@@ -65,14 +69,15 @@ uint32_t layer0_single[MATRIX_ROWS][MATRIX_COLS] =
  */
     uint32_t layer1_single[MATRIX_ROWS][MATRIX_COLS] =
         KEYMAP( \
-        KC_GRAVE,KC_1,   KC_2,   KC_3,   KC_4,   KC_5,    KC_MINUS,  \
-        KC_DEL  ,KC_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5  , KC_LBRC,   \
-        KC_LSFT ,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10 ,KC_F11 , KC_SPC,  \
-        KC_LCTL , KC_LGUI, KC_LALT, LAYER_3, LAYER_1, KC_SPC,_______ \
+        KC_GRV ,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,KC_DEL , \
+        _______,KC_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5  ,KC_F6  ,KC_MINS,KC_EQL ,KC_LBRC,KC_RBRC,KC_BSLS, \
+        _______,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10 ,KC_F11 ,KC_F12 ,_______,KC_MPLY,KC_PGDN,KC_PGUP,RGB_MOD, \
+        _______,_______,_______,_______,_______,KC_PINF,KC_PBLE,_______,KC_MNXT,KC_VOLD,KC_VOLU,KC_MPRV  \
+
         );
 
 
-     /* Layer 2 (lower) Qwerty Plank
+     /* Layer 2 (Raise) Qwerty Plank
  * ,------------------------------------------------.
  * |  ~   |   !  |   @  |   #  |   $  |   %  |   _  |
  * |------+------+------+------+------+-------------|
@@ -85,33 +90,20 @@ uint32_t layer0_single[MATRIX_ROWS][MATRIX_COLS] =
  */
     uint32_t layer2_single[MATRIX_ROWS][MATRIX_COLS] =
         KEYMAP( \
-        KC_TILD ,KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_UNDS,  \
-        KC_DEL  ,KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_LPRN,   \
-        KC_LSFT ,KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_SPC,  \
-        KC_LCTL ,KC_LGUI, KC_LALT, LAYER_3, LAYER_1, KC_SPC,  _______ \
+        KC_TILD ,KC_EXLM,KC_AT  ,KC_HASH,KC_DLR ,KC_PERC,KC_CIRC,KC_AMPR,KC_ASTR,KC_LPRN,KC_RPRN,KC_DEL , \
+        _______,KC_BTN2,KC_MS_U,KC_BTN1,KC_MSRE,_______,_______,KC_UNDS,KC_PLUS,KC_LCBR,KC_RCBR,KC_PIPE, \
+        _______,KC_MS_L,KC_MS_D,KC_MS_R,_______,_______,_______,_______,KC_MPLY,KC_END ,KC_HOME,RGB_TOG, \
+        _______,KC_ACL0,KC_ACL1,KC_ACL2,_______,_______,_______,_______,KC_MNXT,KC_VOLD,KC_VOLU,KC_MPRV  \
         );
 
 
-/* Layer 3 Qwerty Plank
- * ,------------------------------------------------.
- * | ESC* |  F1  |  F2  |  F3  |  F4  |  F5  |PRTSCR| 
- * |------+------+------+------+------+-------------|
- * | CAPL*| PUP* | NEXT*| PLAY*| PREV*| VOL+*| MUTE*|
- * |------+------+------+------+------+------|------|
- * | Shift|PDOWN*| INS* | HOME*| END* | VOL-*|Space |
- * |------+------+------+------+------+------+------'
- * | Ctrl | GUI  | Alt  | L(3) | L(1) |Space |
- * `-----------------------------------------'
- */
     uint32_t layer3_single[MATRIX_ROWS][MATRIX_COLS] =
         KEYMAP( \
-        KC_ESC,       KC_F1,      KC_F2,              KC_F3,                  KC_F4,                  KC_F5,      KC_PSCREEN,  \
-        KC_CAPSLOCK,  KC_PGUP,    KC_MEDIA_NEXT_TRACK,KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_PREV_TRACK,    KC_VOLU,    KC_MUTE,   \
-        KC_LSFT,      KC_PGDN,    KC_INS,             KC_HOME,                KC_END,                 KC_VOLD,    KC_SPC,  \
-        KC_LCTL ,     KC_LGUI,    KC_LALT,            LAYER_3,                LAYER_1,                KC_SPC,     _______ \
-        );
-
-
+        _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,
+        _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,
+        _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,
+        _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______
+);
 
 
     for (int row = 0; row < MATRIX_ROWS; ++row)
@@ -122,6 +114,8 @@ uint32_t layer0_single[MATRIX_ROWS][MATRIX_COLS] =
                 matrix[row][col].addActivation(_L1, Method::PRESS, layer1_single[row][col]);
                 matrix[row][col].addActivation(_L2, Method::PRESS, layer2_single[row][col]);
                 matrix[row][col].addActivation(_L3, Method::PRESS, layer3_single[row][col]);
+
+
            
             // if you want to add Tap/Hold or Tap/Doubletap activations, then you add them below.
 
