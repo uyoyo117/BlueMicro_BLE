@@ -30,6 +30,36 @@ std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
         KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO
     ));
 
+    void process_user_macros(uint16_t macroid)
+{
+    switch ((macroid))
+    { 
+        case PASS:
+            addStringToQueue("9737386OP");
+            addKeycodeToQueue(KC_BSPC);
+            addStringToQueue("o86"); 
+        break;
+        case (CBR_FN):
+            addStringToQueue("{}"); 
+            addKeycodeToQueue(KC_LEFT);
+        break;
+        case (BRC_FN):
+            addStringToQueue("[]");
+            addKeycodeToQueue(KC_LEFT);
+        break;
+        case PRN_FN:
+            addStringToQueue("()"); 
+            addKeycodeToQueue(KC_LEFT);
+        break;
+        case IP:
+            addStringToQueue("192.168.1.");
+        break;
+        case SMILE:
+            addStringToQueue(":)");
+        break;
+    }
+}
+
 
 void setupKeymap() {
 /* Qwerty Plank
@@ -72,7 +102,7 @@ uint32_t layer0_single[MATRIX_ROWS][MATRIX_COLS] =
         KC_GRV ,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,KC_DEL , \
         _______,KC_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5  ,KC_F6  ,KC_MINS,KC_EQL ,KC_LBRC,KC_RBRC,KC_BSLS, \
         _______,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10 ,KC_F11 ,KC_F12 ,_______,KC_MPLY,KC_PGDN,KC_PGUP,RGB_MOD, \
-        _______,_______,_______,_______,_______,KC_PINF,KC_PBLE,_______,KC_MNXT,KC_VOLD,KC_VOLU,KC_MPRV  \
+        _______,_______,_______,_______,_______,KC_PINF,KC_PBLE,_______,KC_MNXT,OS(KC_VOLD),OS(KC_VOLU),KC_MPRV  \
 
         );
 
@@ -93,10 +123,10 @@ uint32_t layer0_single[MATRIX_ROWS][MATRIX_COLS] =
         KC_TILD ,KC_EXLM,KC_AT  ,KC_HASH,KC_DLR ,KC_PERC,KC_CIRC,KC_AMPR,KC_ASTR,KC_LPRN,KC_RPRN,KC_DEL , \
         _______,KC_BTN2,KC_MS_U,KC_BTN1,KC_MSRE,_______,_______,KC_UNDS,KC_PLUS,KC_LCBR,KC_RCBR,KC_PIPE, \
         _______,KC_MS_L,KC_MS_D,KC_MS_R,_______,_______,_______,_______,KC_MPLY,KC_END ,KC_HOME,RGB_TOG, \
-        _______,KC_ACL0,KC_ACL1,KC_ACL2,_______,_______,_______,_______,KC_MNXT,KC_VOLD,KC_VOLU,KC_MPRV  \
+        _______,KC_ACL0,KC_ACL1,KC_ACL2,_______,_______,_______,_______,KC_MNXT,OS(KC_VOLD),OS(KC_VOLU),KC_MPRV  \
         );
 
-
+     // Layer 3 (Adjast) Qwerty Plank
     uint32_t layer3_single[MATRIX_ROWS][MATRIX_COLS] =
         KEYMAP( \
         _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,
@@ -121,4 +151,5 @@ uint32_t layer0_single[MATRIX_ROWS][MATRIX_COLS] =
 
         }
     }
+
 }

@@ -50,6 +50,21 @@ rgb_color hsvToRgb(uint16_t h, uint8_t s, uint8_t v)
 }
 
 
+uint16_t XY( uint8_t x, uint8_t y)
+{
+  uint16_t i;
+    if( y & 0x01) {
+      // Odd rows run backwards
+      uint8_t reverseX = (12 - 1) - x;
+      i = (y * 12) + reverseX;
+    } else {
+      // Even rows run forwards
+      i = (y * 12) + x;
+    }
+  
+  return i;
+}
+
 void setupRGB(void)
 {
    pixels.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
@@ -102,7 +117,9 @@ switch (rgb_mode)
             break;
         case RGB_MODE_BREATHE:      
             break;
-        case RGB_MODE_RAINBOW:      
+        case RGB_MODE_RAINBOW:  
+           for(uint16_t i=0; i<12; i++){
+           }    
             break;
         case RGB_MODE_SWIRL:      
             break; 
@@ -146,4 +163,3 @@ void suspendRGB(void)
   }
   pixels.show();   // Send the updated pixel colors to the hardware.
 }
-
