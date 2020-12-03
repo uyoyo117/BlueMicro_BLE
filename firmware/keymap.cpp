@@ -82,7 +82,13 @@ uint32_t layer0_single[MATRIX_ROWS][MATRIX_COLS] =
         LAYER_3, KC_LCTL, KC_LALT, KC_LGUI, LAYER_1,  KC_SPC, KC_SPC, LAYER_2,KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT 
     );
 
-
+uint32_t layer0_single_HOLD[MATRIX_ROWS][MATRIX_COLS] =
+    KEYMAP(
+         _______,_______,_______,_______,_______,_______,LCTL(KC_Y),_______,_______,_______,_______,_______,
+        _______,LCTL(KC_A),_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,
+        _______,LCTL(KC_Z),LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),_______,_______,_______,_______,_______,_______,_______,
+        _______,_______,_______,LGUI(KC_V),_______,_______,_______,_______,_______,_______,_______,_______
+    );
 
 
 
@@ -141,6 +147,7 @@ uint32_t layer0_single[MATRIX_ROWS][MATRIX_COLS] =
         for (int col = 0; col < MATRIX_COLS; ++col)
         {
                 matrix[row][col].addActivation(_L0, Method::PRESS, layer0_single[row][col]);
+                matrix[row][col].addActivation(_L0, Method::DT_DOUBLETAP, layer0_single_HOLD[row][col]);
                 matrix[row][col].addActivation(_L1, Method::PRESS, layer1_single[row][col]);
                 matrix[row][col].addActivation(_L2, Method::PRESS, layer2_single[row][col]);
                 matrix[row][col].addActivation(_L3, Method::PRESS, layer3_single[row][col]);

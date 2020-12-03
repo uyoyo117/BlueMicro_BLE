@@ -35,7 +35,7 @@ std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
         {L_MACRO,   KC_LCTL, KC_LALT, KC_LGUI,L_LOWER, KC_SPC,  KC_SPC,  L_RAISE,KC_LEFT, KC_DOWN,   KC_UP,  KC_RIGHT}
     }};
 
- 
+	 
 void setupKeymap() {
    
 

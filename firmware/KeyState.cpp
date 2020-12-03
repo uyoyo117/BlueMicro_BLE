@@ -29,10 +29,10 @@ KeyState::KeyState() {
 
 void KeyState::addMethod(Method method)
 {
-    if (method == Method::MT_TAP || method == Method::MT_HOLD) {
+    if (method == Method::MT_TAP || method == Method::MT_HOLD ) {
         checkModTap = true;
     }
-    else if (method == Method::DT_TAP || method == Method::DT_DOUBLETAP) 
+    else if (method == Method::DT_TAP || method == Method::DT_DOUBLETAP || method == Method::PRESS) 
     {
         checkDoubleTap = true;
     }
@@ -100,5 +100,3 @@ KeyState::State KeyState::getState() const
 {
     return state;
 }
-
-
