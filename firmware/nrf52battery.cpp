@@ -156,4 +156,3 @@ uint32_t Battery::vbat_mv = 0;
 uint32_t Battery::vbat_vdd = 0;
 uint8_t Battery::vbat_per = 0;
 uint8_t Battery::batt_type = BATT_UNKNOWN;
-

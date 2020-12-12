@@ -20,23 +20,23 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #ifndef HARDWARE_CONFIG_H
 #define HARDWARE_CONFIG_H
 #include "hardware_variants.h"
+#include "keyboard_config.h"
 
 /* HARDWARE DEFINITION*/
 /* key matrix size */
-#define MATRIX_ROWS 4
-#define MATRIX_COLS 7
-
-#define MATRIX_ROW_PINS {13, 24, 9, 10 }
-#define MATRIX_COL_PINS {26, 29, 2, 45, 3, 28, 43 }
+#define MATRIX_ROWS 6
+#define MATRIX_COLS 6
+#define MATRIX_ROW_PINS {7, 9, 10, 11, 12, 13 }
+#define MATRIX_COL_PINS {A0, A1, A2, A3, A4, A5 }
 #define UNUSED_PINS {}
 #define BACKLIGHT_LED_PIN 38 
 #define DEFAULT_PWM_VALUE 10000            // PWM intensity
-#define BACKLIGHT_PWM_ON 1  
+#define BACKLIGHT_PWM_ON 0  
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 #define BATTERY_TYPE BATT_LIPO
-#define VBAT_PIN  31
-#define VCC_PIN 12
+#define VBAT_PIN  0
+#define VCC_PIN 0
 #define VCC_POLARITY_ON 1
    /*     #define D3      6  
         #define D2      8   

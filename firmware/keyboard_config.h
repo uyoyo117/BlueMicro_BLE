@@ -17,51 +17,63 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
-#ifndef KEYBOARD_CONFIG_H
+
 #define KEYBOARD_CONFIG_H
 #include "hardware_config.h"
 
 
 #define KEYBOARD_SIDE RIGHT
+//#define KEYBOARD_SIDE SINGLE
+//#define KEYBOARD_SIDE LEFT
 // CHANGE THIS FOR THE KEYBOARD TO MATCH WHAT IS BEING FLASHED. OPTIONS: LEFT  RIGHT  SINGLE
 
-#define DEVICE_NAME_R                         "ErgoTravelBLE_R"                          /**< Name of device. Will be included in the advertising data. */
-#define DEVICE_NAME_L                        "ErgoTravelBLE_L"                          /**< Name of device. Will be included in the advertising data. */
-#define DEVICE_NAME_M                         "ErgoTravelBLE"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_R                         "MiniDactyl_BLE"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_L                         "MiniDactyl_BLE"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_M                         "MiniDactyl_BLE"                          /**< Name of device. Will be included in the advertising data. */
 
-#define DEVICE_MODEL                        "ErgoTravelBLE_V1"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_MODEL                        "Dactyl_Manuform(5x6)BLE"                          /**< Name of device. Will be included in the advertising data. */
 
-#define MANUFACTURER_NAME                   "JPConstantineau.com"                      /**< Manufacturer. Will be passed to Device Information Service. */
+#define MANUFACTURER_NAME                   "Yonatan keyboard"                      /**< Manufacturer. Will be passed to Device Information Service. */
 
 
 
-#if KEYBOARD_SIDE == RIGHT
+#if KEYBOARD_SIDE == LEFT
 #define KEYMAP( \
-      k00, k01, k02, k03, k04, k05, k06, \
-      k10, k11, k12, k13, k14, k15, k16, \
-      k20, k21, k22, k23, k24, k25, k26, \
-      k30, k31, k32, k33, k34, k35,  k36 \
+      k00,  k01,  k02, k03, k04, k05, \
+      k10,  k11,  k12, k13, k14, k15, \
+      k20,  k21,  k22, k23, k24, k25, \
+      k30,  k31,  k32, k33, k34, k35, \
+                k42, k43,           \
+                          k54, k55, \
+                             k51, k53, \
+                             k50, k52  \
 ) \
 { \
-    { k06, k05, k04, k03, k02, k01, k00 }, \
-    { k16, k15, k14, k13, k12, k11, k10 }, \
-    { k26, k25, k24, k23, k22, k21, k20 }, \
-    { k36, k35, k34, k33, k32, k31, k30 } \
-}
+    { k00,  k01,  k02, k03, k04, k05 }, \
+    { k10,  k11,  k12, k13, k14, k15 }, \
+    { k20,  k21,  k22, k23, k24, k25 }, \
+    { k30,  k31,  k32, k33, k34, k35 }, \
+    { KC_NO,  KC_NO,  k42, k43, KC_NO,KC_NO }, \
+    {k50,k51,k52, k53,k54, k55}  \
+} 
 #else
 #define KEYMAP( \
-      k00, k01, k02, k03, k04, k05, k06, \
-      k10, k11, k12, k13, k14, k15, k16, \
-      k20, k21, k22, k23, k24, k25, k26, \
-      k30, k31, k32, k33, k34, k35,  k36 \
+      k00,  k01,  k02, k03, k04, k05, \
+      k10,  k11,  k12, k13, k14, k15, \
+      k20,  k21,  k22, k23, k24, k25, \
+      k30,  k31,  k32, k33, k34, k35, \
+                k42, k43,           \
+                          k50, k51, \
+                             k52, k54, \
+                             k53, k55  \
 ) \
 { \
-    { k00, k01, k02, k03, k04, k05, k06 }, \
-    { k10, k11, k12, k13, k14, k15, k16 }, \
-    { k20, k21, k22, k23, k24, k25, k26 }, \
-    { k30, k31, k32, k33, k34, k35, k36 } \
+    { k00,  k01,  k02, k03, k04, k05 }, \
+    { k10,  k11,  k12, k13, k14, k15 }, \
+    { k20,  k21,  k22, k23, k24, k25 }, \
+    { k30,  k31,  k32, k33, k34, k35 }, \
+    { KC_NO,  KC_NO,  k42, k43, KC_NO,KC_NO }, \
+    {k50,k51,k52, k53,k54, k55}  \
 } 
 
-#endif
-
-#endif /* KEYBOARD_CONFIG_H */
+#endif /* KEYBOARD_CONFIG_H */#endif /* KEYBOARD_CONFIG_H */

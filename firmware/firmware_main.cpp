@@ -409,7 +409,7 @@ void process_keyboard_function(uint16_t keycode)
     case PRINT_BATTERY:
       intval = batterymonitor.vbat_per;
 
-      switch (batterymonitor.batt_type)
+      switch (BATT_LIPO)
       {
         case BATT_UNKNOWN:
             snprintf (buffer, sizeof(buffer), "VDD = %.0f mV, VBatt = %.0f mV", batterymonitor.vbat_vdd*1.0, batterymonitor.vbat_mv*1.0);
