@@ -55,6 +55,9 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 // define macro hooks
 
 #define PASS MC(KC_A)
+#define CBR_FN   MC(KC_H)
+#define BRC_FN   MC(KC_I)
+#define PRN_FN   MC(KC_J)
 #define WORK_ADD MC(KC_B)
 #define EMAIL_1  MC(KC_C)
 #define EMAIL_2  MC(KC_D)
