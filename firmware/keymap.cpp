@@ -70,7 +70,7 @@ void process_user_layers(uint16_t layermask)
  *                             `-------------------------. 
  *                                           |Manu | Home|
  *                                           ------------| 
- *                                           | PASS|  `  |
+ *                                           |     |  `  |
  *                                           ------------' 
  */
 
@@ -83,7 +83,7 @@ std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
                           KC_LBRC, KC_RBRC, 
                                             KC_SPC, L_LOWER,
                                             KC_APP, KC_HOME,
-                                            PASS, KC_GRAVE
+                                           _______, KC_GRAVE
     )};
 
  
@@ -94,15 +94,15 @@ void setupKeymap() {
  * ,-----------------------------------------.
  * |  F12 |  F1  |  F2  |  F3  |  F4  |  F5  |
  * |-----------------------------------------|
- * |      |  All |      |      |      |   [  | 
+ * |      | Home | PgDn | PgUp |  End |   [  | 
  * |------+------+------+------+------+------|
- * |      | Home | PgDn | PgUp | End  |   (  |
+ * |      |  ALL |      |      |      |   (  |
  * |------+------+------+------+------+------|
  * |      | Undo | Cut  | Copy | Paste|      |
  * `-----------------------------------------'
  *               |      |      |
  *               `---------------------------.
- *                             |      |      |
+ *                             |PASS  |      |
  *                             `---------------------------. 
  *                                           |      |      |
  *                                           --------------| 
@@ -112,11 +112,11 @@ void setupKeymap() {
     uint32_t lower[MATRIX_ROWS][MATRIX_COLS] =
         KEYMAP( \
   KC_F12, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5, \
-  _______,KC_HOME,_______,_______,_______,BRC_FN , \
-  _______,LCTL(KC_A), KC_PGDN, KC_PGUP, KC_END,PRN_FN , \
+  _______,KC_HOME, KC_PGDN, KC_PGUP, KC_END,LCTL(KC_T) , \
+  _______,LCTL(KC_A),_______,_______,_______,PRN_FN , \
   _______,KC_UND,KC_CUT,KC_CPY,KC_PST, _______, \
                   _______,_______,                 \
-                                  _______,_______, \
+                                  PASS,_______, \
                                   _______,_______, \
                                   _______,_______  \
 );
@@ -228,15 +228,15 @@ void setupKeymap() {
 
 /* rasied
  *                ,-----------------------------------------.
- *                |   F6 |  F7  |  F8  |  F9  | F10  | F11  |
+ *                |   ^  |   &  |  *   |   (  |   )  |  Del |
  *                |-----------------------------------------|
  *                | []_FN| BTN2 | MS_U | BTN1 | MSRE | Mute |
  *                |------+------+------+------+-------------|
- *                |()_FN | MS_L | MS_D | MS_R |      | Vol+ |
+ *                |()_FN | MS_L | MS_D | MS_R | MSWD | Vol+ |
  *                |------+------+------+------+------|------|
- *                |      | ACL0 | ACL1 | ACL2 |      | Vol- |
+ *                |      | ACL0 | ACL1 | ACL2 | MSWU | Vol- |
  *                `-----------------------------------------'
- *                              |      |      |
+ *                              |  MSWU| MSWD |
  *                ,---------------------------'
  *                |      |      |
  *  ,---------------------------' 
@@ -247,11 +247,11 @@ void setupKeymap() {
  */
     uint32_t raise[MATRIX_ROWS][MATRIX_COLS] =
         KEYMAP( \
-  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   \
-  BRC_FN ,KC_BTN1 ,KC_MS_U ,KC_BTN2 , KC_MSRE, KC_MUTE,  \
-  PRN_FN ,KC_MS_L ,KC_MS_D ,KC_MS_R , KC_WH_D, KC_VOLU,  \
-  _______,KC_ACL0 ,KC_ACL1 ,KC_ACL2 , KC_WH_U, KC_VOLD,  \
-                    _______, _______,                    \
+   KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,  \
+  BRC_FN ,KC_BTN2 ,KC_MS_U ,KC_BTN1 , KC_MSRE, KC_MUTE,  \
+  PRN_FN ,KC_MS_L ,KC_MS_D ,KC_MS_R , KC_WH_U, KC_VOLU,  \
+  _______,KC_ACL0 ,KC_ACL1 ,KC_ACL2 , KC_WH_D, KC_VOLD,  \
+                    KC_WH_U, KC_WH_D,                    \
   _______, _______,                                      \
   _______, _______,                                      \
   _______, _______                                       \ 
@@ -259,7 +259,7 @@ void setupKeymap() {
 
 /* lower
  *                ,-----------------------------------------.
- *                |   ^  |   &  |  *   |   (  |   )  |  Del |
+ *                |   F6 |  F7  |  F8  |  F9  | F10  | F11  |
  *                |-----------------------------------------|
  *                |   ]  |   7  |  8   |   9  |   -  |   _  |
  *                |------+------+------+------+-------------|
@@ -278,7 +278,7 @@ void setupKeymap() {
  */
     uint32_t lower[MATRIX_ROWS][MATRIX_COLS] =
         KEYMAP( \
-  KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,   \
+  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   \
   BRC_FN , KC_P7 ,  KC_P8 ,  KC_P9 ,  KC_MINS, KC_UNDS,  \
   PRN_FN , KC_P4 ,  KC_P5 ,  KC_P6 ,  KC_PLUS, KC_PIPE,  \
   KC_NLCK, KC_P1 ,  KC_P2 ,  KC_P3 ,  KC_SLSH, _______,  \
@@ -367,6 +367,15 @@ void process_user_macros(uint16_t macroid)
       break;
      case EMAIL_2:
      addStringToQueue("Other@Email");
+      break;  
+      case M1:
+     addKeycodeToQueue(KC_WH_U);
+      break;  
+      case M2:
+     addKeycodeToQueue(KC_WH_D);
+      break;  
+      case M3:
+     addKeycodeToQueue(KC_LEFT);
       break;  
  }
 }

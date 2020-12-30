@@ -61,6 +61,9 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #define WORK_ADD MC(KC_B)
 #define EMAIL_1  MC(KC_C)
 #define EMAIL_2  MC(KC_D)
+#define M1  MC(KC_E)
+#define M2  MC(KC_F)
+#define M3  MC(KC_G)
 
 #define USER_MACRO_FUNCTION   0 
 void process_user_macros(uint16_t macroid);
